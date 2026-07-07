@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Pizzaria.iml" filepath="$PROJECT_DIR$/.idea/Pizzaria.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pizzaria_gerenciador/pizzaria_gerenciador.iml" filepath="$PROJECT_DIR$/pizzaria_gerenciador/pizzaria_gerenciador.iml" />
+    </modules>
+  </component>
+</project>
