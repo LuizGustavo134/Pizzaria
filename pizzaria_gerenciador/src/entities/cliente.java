@@ -1,19 +1,25 @@
 package entities;
 
-import java.util.Calendar;
-
 public class cliente {
     public String nome;
     private int cpf;
     private String pagamento;
-    private String endereço;
+    private String endereco;
+    private int id;
 
     public cliente(){}
-    public cliente(String nome, int cpf, String pagamento, String endereço) {
+    public cliente(String nome, int cpf, String pagamento, String endereco, int id) {
         this.nome = nome;
         this.cpf = cpf;
         this.pagamento = pagamento;
-        this.endereço = endereço;
+        this.endereco = endereco;
+        this.id = id;
     }
 
+    public cliente( String nome,String endereco, String pagamento , int id) { // opção caso não infome cpf
+        this.nome = nome;
+        this.endereco = endereco;
+        this.pagamento = pagamento;
+        this.id = id;
+    }
 }
