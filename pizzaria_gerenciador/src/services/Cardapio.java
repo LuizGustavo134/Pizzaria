@@ -22,8 +22,8 @@ public class Cardapio {
             System.out.println("(" + i + ")" + sabores[i]);
         }
     }
-    public String pesquisaSabor(int numeroDoSabor ) {
-        String r1 = sabores[numeroDoSabor];
-        return r1;
+    public String pesquisaSabor(int codigoDoSabor ) {
+        String busca = sabores[codigoDoSabor];
+        return busca;
 }}
 
