@@ -51,7 +51,7 @@
                     case 3:
                         sabor3 = escolhaDoUsuário[i];
                     case 4:
-                        sabor4 = escolhaDoUsuário[i];
+                        sabor4 = escolhaDoUsuário[i]; // coleta de sabores
                 }
             }
 
@@ -59,16 +59,16 @@
             char res = scan.nextLine().charAt(0);
 
             String endereco = " ";
-            String destinoFinal = " ";
+            String entrega = " ";
             if (res =='y'){
                 String enderecos = scan.nextLine();
                 endereco = enderecos;
-                destinoFinal = "Entregue via Motoboy";
+                entrega = "Entregue via Motoboy";
             }else{
-                destinoFinal = "Recolhido pelo cliente em loja";
+                entrega = "Recolhido pelo cliente em loja";
             }
              System.out.println(nome+" \n"+tamanho+" \n"+ sabor1+" \n"+ sabor2+" \n"+sabor3+" \n"+sabor4+" \n"+endereco
-            +" \n"+destinoFinal+" \n");
+            +" \n"+entrega+" \n");
             ;
 
 
