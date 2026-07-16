@@ -1,6 +1,4 @@
     package services;
-    import entities.*;
-    import java.math.*;
     import java.util.Random;
     import java.util.Scanner;
 
@@ -10,27 +8,26 @@
         public Atendimento() {
         }
         /// /////////////////Coletando dados do cliente///////////////
-        public void Att1Cliente(cliente novoCliente){
+        /*public void Att1Cliente(cliente novoCliente){
             System.out.println("nome: ");
             String nome = scan.nextLine();
             int id_cliente = random.nextInt(0,501);
             cliente clienteInfo = new cliente(nome,id_cliente);
-        }
+        }*/
 
         public void Att2Cliente(){ //////Formulário da pizza///////
             String nome = "carlos";
             Cardapio card = new Cardapio();
-
+            int id_cliente = random.nextInt(0,501);
             //////////////////////Tipo de pizza//////////////////////////////////////
             System.out.println("o que deseja: ");
-            String tamanho = " ";
-            String tipoPizza[] = {"null","Pizza pequena","Pizza Média","Pizza Grande","P-Tamanho Familia"};
-            for (int i = 1 ; i<5 ;i++){ // menu de tamanho da pizza
-                System.out.println("("+i+")"+tipoPizza[i]);
-            }
+            card.Tipo_de_Pizza();
             //////////////////////Escolha do Usuário 1///////////////////////////////
+            String tamanho = " ";
             int escolha = scan.nextInt();
-            tamanho = tipoPizza[escolha];
+            card.EscolhaDaPizza(escolha);
+            // atualizar o cardápio de tipo de pizza
+
 
             //////////////////////Escolha de Sabor///////////////////////////////////
             System.out.println("qual sabor você deseja: ");
@@ -40,12 +37,12 @@
             String[] escolhaDoUsuário = new String[4]; // guarda o que o usuario pediu
 
             for (int i = 0; i < 4;i++) {
-                System.out.println("sabor" + i + "° :");
-                int codigoDoSabor = scan.nextInt();
+                System.out.println(i+1 +"° sabor:");
+                int codigoDoSabor = scan.nextInt();// variavel enviada para cardapio
                 scan.nextLine();
 
-                escolhaDoUsuário[i] = card.pesquisaSabor(codigoDoSabor);
-            }// Pesquisa a escolha do usuario
+                escolhaDoUsuário[i] = card.pesquisaSabor(codigoDoSabor); // retorna o sabor por do codigo
+            }
             String sabor1=" ",sabor2=" ",sabor3=" ",sabor4= "";
 
             for (int i = 0 ; i< escolhaDoUsuário.length; i++){
@@ -59,9 +56,6 @@
                     case 4:
                         sabor4 = escolhaDoUsuário[i]; // coleta de sabores
                 }
-
-
-
             }
             String endereco = " ";
             String entrega = " ";
@@ -87,6 +81,7 @@
 
                // preco = tabela.precificando(saborquantidade);  tentativa de preco
             } while (preco == 0);
+
            ////////////////////////////////Finalização//////////////////////////////////////////////////
            /*
             === Vou concertar ao definir a classe de tabela de precos=====
@@ -95,5 +90,6 @@
             aqui vai ficar a criação do pedido
 
              */
+            System.out.println(nome+" "+id_cliente+" "+tamanho+" "+" "+sabor1+" "+sabor2+" "+" "+sabor3+" "+sabor4+" \n"+endereco+" "+ entrega);
         }
     }
