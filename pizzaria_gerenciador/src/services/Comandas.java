@@ -5,14 +5,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import entities.*;
-
+ // aqui deve ficar 1 lista o cliente e pedido dever ser atributos dela e o id como indice
 public class Comandas {
-    public List<List<pedido>> comandaAtiva = new ArrayList<>();
-    public List<cliente> TotalDeClientes= new ArrayList<>();
-    public List<pedido> pedidosfeitos = new ArrayList<>();
-    Scanner scan = new Scanner(System.in);
-    Atendimento att = new Atendimento();
-    public Comandas() {
-    }
+    private cliente clienteInfo;
 
 }

@@ -1,24 +1,25 @@
 package entities;
 
 public class pedido {
-    private String nomePedido;
+    private int id_pedido;
     private String tamanho;
-    private double preço;
+    private double preco;
     private String sabor1,sabor2,sabor3,sabor4;
-    private int id;
-    private String destinoFinal;
+    private String endereco;
+    private String entrega;
 
     public pedido(){}
-    public pedido(String nomePedido, String tamanho,double preço,String destinoFinal,
-                  String sabor1, String sabor2, String sabor3, String sabor4, int id) {
-        this.nomePedido = nomePedido;
+    public pedido(int id_pedido, String tamanho,double preco,String entrega,String endereco,
+                  String sabor1, String sabor2, String sabor3, String sabor4) {
+        this.id_pedido = id_pedido;
         this.tamanho = tamanho;
-        this.preço = preço;
+        this.preco = preco;
         this.sabor1 = sabor1;
         this.sabor2 = sabor2;
         this.sabor3 = sabor3;
         this.sabor4 = sabor4;
-        this.id = id;
-        this.destinoFinal = destinoFinal;
+        this.entrega = entrega;
+        this.endereco = endereco;
     }
+    public void Identificacao(int id_cliente ){}
 }

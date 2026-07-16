@@ -1,19 +1,25 @@
     package services;
     import entities.*;
-
+    import java.math.*;
+    import java.util.Random;
     import java.util.Scanner;
 
     public class Atendimento {
+        Scanner scan = new Scanner(System.in);
+        Random random = new Random();
         public Atendimento() {
         }
-
-        public void AttCliente(){
-            //////////////////////Formulário de cadastro//////////////////////////////
-            Scanner scan = new Scanner(System.in);
-            Cardapio card = new Cardapio();
-
+        /// /////////////////Coletando dados do cliente///////////////
+        public void Att1Cliente(cliente novoCliente){
             System.out.println("nome: ");
             String nome = scan.nextLine();
+            int id_cliente = random.nextInt(0,501);
+            cliente clienteInfo = new cliente(nome,id_cliente);
+        }
+
+        public void Att2Cliente(){ //////Formulário da pizza///////
+            String nome = "carlos";
+            Cardapio card = new Cardapio();
 
             //////////////////////Tipo de pizza//////////////////////////////////////
             System.out.println("o que deseja: ");
@@ -53,26 +59,41 @@
                     case 4:
                         sabor4 = escolhaDoUsuário[i]; // coleta de sabores
                 }
+
+
+
             }
-
-            System.out.println("Deseja que o pedido seja entrgue? y/n");
-            char res = scan.nextLine().charAt(0);
-
             String endereco = " ";
             String entrega = " ";
+            System.out.println("Deseja que o pedido seja entrgue? y/n");
+            char res = scan.nextLine().charAt(0);
+            scan.nextLine();
             if (res =='y'){
                 String enderecos = scan.nextLine();
-                endereco = enderecos;
                 entrega = "Entregue via Motoboy";
             }else{
                 entrega = "Recolhido pelo cliente em loja";
             }
-             System.out.println(nome+" \n"+tamanho+" \n"+ sabor1+" \n"+ sabor2+" \n"+sabor3+" \n"+sabor4+" \n"+endereco
-            +" \n"+entrega+" \n");
-            ;
+            /////////////////////Precificação////////////////////////////////////
+            tabela_de_precos tabela = new tabela_de_precos();
+            double preco = 0;
+            int saborquantidade =0;
+            do {
+                for (int i = 0; i<escolhaDoUsuário.length; i++){
+                    if (!(escolhaDoUsuário[i].isBlank())){ // verifica quantos sabores o usuário pediu
+                        saborquantidade += 1;
+                    }
+                }
 
+               // preco = tabela.precificando(saborquantidade);  tentativa de preco
+            } while (preco == 0);
+           ////////////////////////////////Finalização//////////////////////////////////////////////////
+           /*
+            === Vou concertar ao definir a classe de tabela de precos=====
+            pedido pedidoInfo = new pedido(id_pedido,tamanho,preco,sabor1,sabor2,sabor3,sabor4);
 
+            aqui vai ficar a criação do pedido
 
-
+             */
         }
     }
